@@ -1,0 +1,147 @@
+// $primary: #4ea995;
+$primary: #725e9b;
+$dark: #382e4c;
+
+$body-color: #fff;
+$body-bg: #282234;
+
+$link-color: #d420ec;
+
+// Forms.
+$input-bg: #725e9b;
+$input-border-color: $input-bg;
+$form-text-color: #fff;
+$input-placeholder-color: #fff;
+
+// Pagination.
+$pagination-color: #fff;
+$pagination-bg: $primary;
+$pagination-border-color: $pagination-bg;
+$pagination-disabled-color: #a096b5;
+$pagination-disabled-border-color: $primary;
+$pagination-hover-bg: #615084;
+$pagination-hover-color: #fff;
+$pagination-hover-border-color: $pagination-hover-bg;
+$pagination-disabled-bg: $primary;
+$pagination-border-radius: 50rem;
+
+$font-family-base: 'Raleway', sans-serif;
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+.bg-violet-purple {
+    background: rgb(37, 41, 139);
+    background: linear-gradient(60deg,
+            rgba(37, 41, 139, 1) 0%,
+            rgba(94, 30, 224, 1) 70%,
+            rgba(99, 24, 194, 1) 100%);
+}
+
+.bg-orange-pink {
+    background: #e9571d;
+    background: linear-gradient(45deg,
+            rgb(233, 87, 29) 0%,
+            rgb(220, 53, 158) 100%);
+}
+
+.bg-indigo {
+    background: #1f1143;
+}
+
+// Search Results
+.item-card {
+    @extend .rounded-4;
+    @extend .p-4;
+    @extend .shadow;
+
+    background: #574c6c;
+    border: 2px solid #574c6c;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+
+    .item-name {
+        @extend .ps-4;
+        @extend .pe-4;
+        @extend .pb-3;
+
+        color: $white;
+        text-shadow: 1px 1px 2px #000000cc;
+        transform: translateY(13px);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition-duration: 400ms;
+    }
+
+    &.hoverable {
+        .item-name {
+            filter: opacity(0);
+        }
+
+        &:hover .item-name {
+            filter: opacity(1);
+            transform: translateY(0px);
+        }
+    }
+}
+
+a.item-card.hoverable:hover {
+    border: 2px solid #bc6a5f;
+    transform: translateY(-5px) scale(1.01);
+}
+
+.texture-skeleton-loader {
+    background: rgba(233, 87, 29, 0.2);
+    background: linear-gradient(45deg,
+            rgba(233, 87, 29, 0.2) 0%,
+            rgba(220, 53, 158, 0.2) 100%);
+    animation: texture-skeleton-loader 4s ease-in-out infinite;
+}
+
+@keyframes texture-skeleton-loader {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(0.95);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+// Global animations.
+.fadeout-fast {
+    animation: fadeout 250ms ease-in forwards;
+}
+
+@keyframes fadeout {
+    0% {
+        filter: opacity(1);
+    }
+
+    100% {
+        filter: opacity(0);
+    }
+}
+
+.fadein-medium {
+    animation: fadein 700ms ease-in forwards;
+}
+
+@keyframes fadein {
+    0% {
+        filter: opacity(0);
+    }
+
+    100% {
+        filter: opacity(1);
+    }
+}
+
+input[type='checkbox']:hover {
+    cursor: pointer;
+}
